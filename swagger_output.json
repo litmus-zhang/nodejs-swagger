@@ -1,0 +1,168 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Quick start to auto-docs with swagger",
+    "description": "Auto-documenting our APIs with Swagger documentation. Tutorial by Daniel Olabemiwo"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/students": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/students/get/{id}": {
+      "get": {
+        "tags": [
+          "Students"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/students/update/{id}": {
+      "patch": {
+        "tags": [
+          "Students"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/students/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Students"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "StudentModel": {
+      "type": "object",
+      "properties": {
+        "firstname": {
+          "type": "string",
+          "example": "Ade"
+        },
+        "lastname": {
+          "type": "string",
+          "example": "Samuel"
+        },
+        "middlename": {
+          "type": "string",
+          "example": "Daniel"
+        },
+        "class": {
+          "type": "string",
+          "example": "BASIC 3"
+        },
+        "age": {
+          "type": "number",
+          "example": 10
+        }
+      },
+      "required": [
+        "firstname",
+        "lastname",
+        "middlename",
+        "class",
+        "age"
+      ]
+    }
+  }
+}
